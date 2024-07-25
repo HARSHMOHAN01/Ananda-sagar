@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ANANDA SAGARA ORGINATION</title>
+<link rel="icon" type="image/x-icon" href="./LOGO.png">
+<img src="./LOGO.png" alt="Logo" height="500px" width="1300px"/>
+<script>
+function speakText(text) {
+  // Using text-to-speech API for narration
+  let synth = window.speechSynthesis;
+  let utterance = new SpeechSynthesisUtterance(text);
+  synth.speak(utterance);
+}
+
+function askQuestion() {
+  // Asking questions and handling answers
+  let question1 = "Who is eating a carrot?";
+  let answer1 = prompt(question1);
+  document.getElementById('answer1').textContent = `Answer: ${answer1}`;
+
+  let question2 = "What is the rabbit eating?";
+  let answer2 = prompt(question2);
+  document.getElementById('answer2').textContent = `Answer: ${answer2}`;
+}
+</script>
+</head>
+<body>
+<div>
+  <p id="textToNarrate">A rabbit is eating a carrot that is fresh from the garden and orange in color.</p>
+  <button onclick="speakText(document.getElementById('textToNarrate').textContent)">Narrate</button>
+</div>
+
+<div>
+  <button onclick="askQuestion()">Ask Questions</button>
+  <p id="answer1"></p>
+  <p id="answer2"></p>
+</div>
+
+</body>
+</html>
